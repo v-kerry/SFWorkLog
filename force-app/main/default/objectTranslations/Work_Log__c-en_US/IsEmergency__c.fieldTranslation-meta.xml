@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Was this work a part of an emergency? --></help>
+    <label><!-- Emergency? --></label>
+    <name>IsEmergency__c</name>
+</CustomFieldTranslation>

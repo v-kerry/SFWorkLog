@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Was this work a distraction from another task being worked on? --></help>
+    <label><!-- Distraction? --></label>
+    <name>IsDistraction__c</name>
+</CustomFieldTranslation>

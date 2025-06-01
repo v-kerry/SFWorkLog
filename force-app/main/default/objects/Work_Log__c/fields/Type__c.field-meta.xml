@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <description>The type of work performed.</description>
+    <inlineHelpText>The type of work performed.</inlineHelpText>
+    <label>Type</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Standard_Project_Related_Call</fullName>
+                <default>false</default>
+                <label>Standard Project-Related Call</label>
+            </value>
+            <value>
+                <fullName>Project_Questions_Or_Calls</fullName>
+                <default>false</default>
+                <label>Project Questions or Calls</label>
+            </value>
+            <value>
+                <fullName>Story_Questions_Research</fullName>
+                <default>false</default>
+                <label>Story Questions/Research</label>
+            </value>
+            <value>
+                <fullName>Solution_Design</fullName>
+                <default>false</default>
+                <label>Solution Design</label>
+            </value>
+            <value>
+                <fullName>Story_Development</fullName>
+                <default>false</default>
+                <label>Story Development</label>
+            </value>
+            <value>
+                <fullName>PostOp_Story_Work</fullName>
+                <default>false</default>
+                <label>PostOp Story Work</label>
+            </value>
+            <value>
+                <fullName>Personal_Housekeeping</fullName>
+                <default>false</default>
+                <label>Personal Housekeeping</label>
+            </value>
+            <value>
+                <fullName>Documentation</fullName>
+                <default>false</default>
+                <label>Documentation</label>
+            </value>
+            <value>
+                <fullName>Indirect_Project_Work</fullName>
+                <default>false</default>
+                <label>Indirect Project Work</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

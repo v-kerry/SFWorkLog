@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The type of work performed. --></help>
+    <label><!-- Type --></label>
+    <name>Type__c</name>
+    <picklistValues>
+        <masterLabel>Documentation</masterLabel>
+        <translation><!-- Documentation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Indirect Project Work</masterLabel>
+        <translation><!-- Indirect Project Work --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Personal Housekeeping</masterLabel>
+        <translation><!-- Personal Housekeeping --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PostOp Story Work</masterLabel>
+        <translation><!-- PostOp Story Work --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Project Questions or Calls</masterLabel>
+        <translation><!-- Project Questions or Calls --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Solution Design</masterLabel>
+        <translation><!-- Solution Design --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Standard Project-Related Call</masterLabel>
+        <translation><!-- Standard Project-Related Call --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Story Development</masterLabel>
+        <translation><!-- Story Development --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Story Questions/Research</masterLabel>
+        <translation><!-- Story Questions/Research --></translation>
+    </picklistValues>
+</CustomFieldTranslation>
