@@ -1,0 +1,28 @@
+<!-- <template>
+        <lightning-card>
+        <lightning-button-group class="slds-p-horizontal--small">
+            <lightning-button label="Create General Work Log" variant="brand-outline" onclick={handleClick}></lightning-button>
+            <lightning-button label="Create Morning OH Log" variant="brand-outline" onclick={handleClick}></lightning-button>
+            <lightning-button label="Create Standup Log" variant="brand-outline" onclick={handleClick}></lightning-button>
+            <lightning-button label="Create Evening OH Log" variant="brand-outline" onclick={handleClick}></lightning-button>
+            <lightning-button label="Create Architecture OH Log" variant="neutral" onclick={handleClick}></lightning-button>
+            <lightning-button label="Create Story Sizing Log" variant="neutral" onclick={handleClick}></lightning-button>
+            <lightning-button label="Create Sprint Retro Log" variant="neutral" onclick={handleClick}></lightning-button>
+        </lightning-button-group>
+    </lightning-card>
+</template> -->
+
+
+<template>
+        <lightning-card>
+            <lightning-button-menu alternative-text="Show menu" variant="border-filled" onselect={handleClick}>
+                <lightning-menu-item label="Create General Work Log" value="Create General Work Log"></lightning-menu-item>
+                <lightning-menu-item label="Create Morning OH Log" value="Create Morning OH Log"></lightning-menu-item>
+                <lightning-menu-item label="Create Standup Log" value="Create Standup Log"></lightning-menu-item>
+                <lightning-menu-item label="Create Evening OH Log" value="Create Evening OH Log"></lightning-menu-item>
+                <lightning-menu-item label="Create Architecture OH Log" value="Create Architecture OH Log"></lightning-menu-item>
+                <lightning-menu-item label="Create Story Sizing Log" value="Create Story Sizing Log"></lightning-menu-item>
+                <lightning-menu-item label="Create Sprint Retro Log" value="Create Sprint Retro Log"></lightning-menu-item>
+            </lightning-button-menu>
+    </lightning-card>
+</template>

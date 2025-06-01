@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Title__c</columns>
+    <columns>Type__c</columns>
+    <columns>Points__c</columns>
+    <columns>Effective_Points__c</columns>
+    <columns>SF_or_DevOps_Work__c</columns>
+    <columns>Sprint__c</columns>
+    <columns>Assigned_Developer__c</columns>
+    <columns>Paired_Developer__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>
