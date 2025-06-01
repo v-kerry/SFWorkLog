@@ -7,7 +7,7 @@
         <name>Assign_Arch_Call_Variables</name>
         <label>Assign Arch Call Variables</label>
         <locationX>842</locationX>
-        <locationY>566</locationY>
+        <locationY>674</locationY>
         <assignmentItems>
             <assignToReference>CWL_Sprint</assignToReference>
             <operator>Assign</operator>
@@ -87,7 +87,7 @@
         <name>Assign_Daily_Standup_Variables</name>
         <label>Assign Daily Standup Variables</label>
         <locationX>314</locationX>
-        <locationY>566</locationY>
+        <locationY>674</locationY>
         <assignmentItems>
             <assignToReference>CWL_Sprint</assignToReference>
             <operator>Assign</operator>
@@ -167,7 +167,7 @@
         <name>Assign_Evening_OH_Variables</name>
         <label>Assign Evening OH Variables</label>
         <locationX>578</locationX>
-        <locationY>566</locationY>
+        <locationY>674</locationY>
         <assignmentItems>
             <assignToReference>CWL_Sprint</assignToReference>
             <operator>Assign</operator>
@@ -179,49 +179,49 @@
             <assignToReference>CWL_Related_Story</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Evening_OH_Related_Story.selectedChoiceValues</elementReference>
+                <elementReference>EveningOH_Related_Story.selectedChoiceValues</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>CWL_Type</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Evening_OH_Type</elementReference>
+                <elementReference>EveningOH_Type</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>CWL_SF_or_DevOps_Work</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Evening_OH_SF_or_DevOps_Work</elementReference>
+                <elementReference>EveningOH_SF_or_DevOps_Work</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>CWL_Description</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Evening_OH_Description</elementReference>
+                <elementReference>EveningOH_Description</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>CWL_Work_Log_Status</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Evening_OH_Work_Log_Status</elementReference>
+                <elementReference>EveningOH_Work_Log_Status</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>CWL_Start_Time</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Evening_OH_Start_Time</elementReference>
+                <elementReference>EveningOH_Start_Time</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>CWL_End_Time</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Evening_OH_End_time</elementReference>
+                <elementReference>EveningOH_End_time</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -327,7 +327,7 @@
         <name>Assign_Morning_OH_Variables</name>
         <label>Assign Morning OH Variables</label>
         <locationX>50</locationX>
-        <locationY>566</locationY>
+        <locationY>674</locationY>
         <assignmentItems>
             <assignToReference>CWL_Sprint</assignToReference>
             <operator>Assign</operator>
@@ -407,7 +407,7 @@
         <name>Assign_Retro_Variables</name>
         <label>Assign Retro Variables</label>
         <locationX>1106</locationX>
-        <locationY>566</locationY>
+        <locationY>674</locationY>
         <assignmentItems>
             <assignToReference>CWL_Sprint</assignToReference>
             <operator>Assign</operator>
@@ -487,7 +487,7 @@
         <name>Assign_Sizing_Log_Variables</name>
         <label>Assign Sizing Log Variables</label>
         <locationX>1370</locationX>
-        <locationY>566</locationY>
+        <locationY>674</locationY>
         <assignmentItems>
             <assignToReference>CWL_Sprint</assignToReference>
             <operator>Assign</operator>
@@ -630,9 +630,9 @@
         <name>Log_Type_Decision</name>
         <label>Log Type Decision</label>
         <locationX>842</locationX>
-        <locationY>350</locationY>
+        <locationY>458</locationY>
         <defaultConnector>
-            <targetReference>Get_Latest_Work_Log</targetReference>
+            <targetReference>General_Work_Log_Review_Screen</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>General Log</defaultConnectorLabel>
         <rules>
@@ -676,7 +676,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Evening_OH_Work_Log_Review_Screen</targetReference>
+                <targetReference>EveningOH_Work_Log_Review_Screen</targetReference>
             </connector>
             <label>Evening OH</label>
         </rules>
@@ -771,7 +771,7 @@
         <description>Gives the last work log&apos;s End Time plus one minute for Gen Log creation.</description>
         <name>date_time_latest_WL_time</name>
         <dataType>DateTime</dataType>
-        <expression>{!Get_Latest_Work_Log.End_Time__c} + (1/1440)</expression>
+        <expression>IF(ISBLANK({!Get_Latest_Work_Log.Id}), Now(), ({!Get_Latest_Work_Log.End_Time__c} + (1/1440)))</expression>
     </formulas>
     <formulas>
         <name>date_time_now</name>
@@ -942,7 +942,7 @@
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Select_Type_of_Work_Log_Screen</targetReference>
+            <targetReference>Get_Latest_Work_Log</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -971,11 +971,11 @@
         <description>Gets the latest work log based on End Time field</description>
         <name>Get_Latest_Work_Log</name>
         <label>Get Latest Work Log</label>
-        <locationX>1634</locationX>
-        <locationY>458</locationY>
+        <locationX>842</locationX>
+        <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>General_Work_Log_Review_Screen</targetReference>
+            <targetReference>Select_Type_of_Work_Log_Screen</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -1003,7 +1003,7 @@
         <name>Arch_Call_Work_Log_Review_Screen</name>
         <label>Arch Call Work Log Review Screen</label>
         <locationX>842</locationX>
-        <locationY>458</locationY>
+        <locationY>566</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1130,6 +1130,11 @@
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                 </fields>
+                <fields>
+                    <name>Arch_Call_Last_Timestamp_Today</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 11px;&quot;&gt;(last timestamp for today: {!date_time_latest_WL_time})&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -1150,10 +1155,10 @@
     </screens>
     <screens>
         <description>Screen to collect work log data</description>
-        <name>Evening_OH_Work_Log_Review_Screen</name>
+        <name>EveningOH_Work_Log_Review_Screen</name>
         <label>Evening OH Work Log Review Screen</label>
         <locationX>578</locationX>
-        <locationY>458</locationY>
+        <locationY>566</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1162,18 +1167,18 @@
             <targetReference>Assign_Evening_OH_Variables</targetReference>
         </connector>
         <fields>
-            <name>Evening_OH_Screen2_Display_Text1</name>
+            <name>EveningOH_Screen2_Display_Text1</name>
             <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;Create the &lt;/strong&gt;&lt;strong style=&quot;font-size: 14px; color: rgb(208, 131, 13);&quot;&gt;Evening OH log&lt;/strong&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt; dawg:&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
-            <name>Evening_OH_Work_Log_Review_Screen_Section1</name>
+            <name>EveningOH_Work_Log_Review_Screen_Section1</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>Evening_OH_Work_Log_Review_Screen_Section1_Column1</name>
+                <name>EveningOH_Work_Log_Review_Screen_Section1_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Evening_OH_Sprint</name>
+                    <name>EveningOH_Sprint</name>
                     <dataType>String</dataType>
                     <defaultValue>
                         <elementReference>Get_Current_Sprint.Name</elementReference>
@@ -1187,12 +1192,12 @@
                     <isRequired>true</isRequired>
                 </fields>
                 <fields>
-                    <name>Evening_OH_Sprint_Date_Refs</name>
+                    <name>EveningOH_Sprint_Date_Refs</name>
                     <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;(sprint start date = {!Get_Current_Sprint.Start_Date__c};end date = {!Get_Current_Sprint.End_Date__c})&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <fields>
-                    <name>Evening_OH_Related_Story</name>
+                    <name>EveningOH_Related_Story</name>
                     <choiceReferences>Rel_Story_Choices</choiceReferences>
                     <extensionName>flowruntime:choiceLookup</extensionName>
                     <fieldText>Related Story</fieldText>
@@ -1208,7 +1213,7 @@
                     <storeOutputAutomatically>true</storeOutputAutomatically>
                 </fields>
                 <fields>
-                    <name>Evening_OH_Type</name>
+                    <name>EveningOH_Type</name>
                     <choiceReferences>Type_Choices</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
@@ -1223,7 +1228,7 @@
                     <isRequired>true</isRequired>
                 </fields>
                 <fields>
-                    <name>Evening_OH_SF_or_DevOps_Work</name>
+                    <name>EveningOH_SF_or_DevOps_Work</name>
                     <choiceReferences>sf_dev_choice</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
@@ -1238,7 +1243,7 @@
                     <isRequired>true</isRequired>
                 </fields>
                 <fields>
-                    <name>Evening_OH_Description</name>
+                    <name>EveningOH_Description</name>
                     <dataType>String</dataType>
                     <defaultValue>
                         <stringValue>Daily evening OH meeting</stringValue>
@@ -1260,10 +1265,10 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Evening_OH_Work_Log_Review_Screen_Section1_Column2</name>
+                <name>EveningOH_Work_Log_Review_Screen_Section1_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Evening_OH_Work_Log_Status</name>
+                    <name>EveningOH_Work_Log_Status</name>
                     <choiceReferences>Work_Log_Status_Field</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
@@ -1275,7 +1280,7 @@
                     <isRequired>true</isRequired>
                 </fields>
                 <fields>
-                    <name>Evening_OH_Start_Time</name>
+                    <name>EveningOH_Start_Time</name>
                     <dataType>DateTime</dataType>
                     <defaultValue>
                         <elementReference>today_at_230pm</elementReference>
@@ -1286,7 +1291,7 @@
                     <isRequired>true</isRequired>
                 </fields>
                 <fields>
-                    <name>Evening_OH_End_time</name>
+                    <name>EveningOH_End_time</name>
                     <dataType>DateTime</dataType>
                     <defaultValue>
                         <elementReference>today_at_300pm</elementReference>
@@ -1295,6 +1300,11 @@
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>EveningOH_Last_Timestamp_Today</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 11px; background-color: rgb(255, 255, 255);&quot;&gt;(last timestamp for today: {!date_time_latest_WL_time})&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -1500,7 +1510,7 @@
         <name>Morning_OH_Work_Log_Review_Screen</name>
         <label>Morning OH Work Log Review Screen</label>
         <locationX>50</locationX>
-        <locationY>458</locationY>
+        <locationY>566</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1643,6 +1653,11 @@
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
                 </fields>
+                <fields>
+                    <name>MorningOH_Last_Timestamp_Today</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 11px;&quot;&gt;(last timestamp for today: {!date_time_latest_WL_time})&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -1666,7 +1681,7 @@
         <name>Retro_Work_Log_Review_Screen</name>
         <label>Retro Work Log Review Screen</label>
         <locationX>1106</locationX>
-        <locationY>458</locationY>
+        <locationY>566</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1774,6 +1789,9 @@
                 <fields>
                     <name>Retro_Start_Time</name>
                     <dataType>DateTime</dataType>
+                    <defaultValue>
+                        <elementReference>date_time_latest_WL_time</elementReference>
+                    </defaultValue>
                     <fieldText>Start Time</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1782,10 +1800,18 @@
                 <fields>
                     <name>Retro_End_time</name>
                     <dataType>DateTime</dataType>
+                    <defaultValue>
+                        <elementReference>date_time_latest_WL_time</elementReference>
+                    </defaultValue>
                     <fieldText>End time</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>Retro_Last_Timestamp_Today</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 11px; color: rgb(68, 68, 68);&quot;&gt;(last timestamp for today: {!date_time_latest_WL_time})&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -1810,7 +1836,7 @@
         <name>Select_Type_of_Work_Log_Screen</name>
         <label>Select Type of Work Log Screen</label>
         <locationX>842</locationX>
-        <locationY>242</locationY>
+        <locationY>350</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1834,7 +1860,7 @@
         </fields>
         <nextOrFinishButtonLabel>Git&apos;er Done</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
-        <showHeader>false</showHeader>
+        <showHeader>true</showHeader>
         <stageReference>
             <elementReference>Log_Creation_Stage</elementReference>
         </stageReference>
@@ -1844,7 +1870,7 @@
         <name>Sizing_Work_Log_Review_Screen</name>
         <label>Sizing Work Log Review Screen</label>
         <locationX>1370</locationX>
-        <locationY>458</locationY>
+        <locationY>566</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1879,7 +1905,7 @@
                 </fields>
                 <fields>
                     <name>Sizing_Sprint_Date_Refs</name>
-                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;(sprint start date = {!Get_Current_Sprint.Start_Date__c};end date = {!Get_Current_Sprint.End_Date__c})&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 11px;&quot;&gt;(sprint start date = {!Get_Current_Sprint.Start_Date__c};end date = {!Get_Current_Sprint.End_Date__c})&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <fields>
@@ -1952,6 +1978,9 @@
                 <fields>
                     <name>Sizing_Start_Time</name>
                     <dataType>DateTime</dataType>
+                    <defaultValue>
+                        <elementReference>date_time_latest_WL_time</elementReference>
+                    </defaultValue>
                     <fieldText>Start Time</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1960,10 +1989,18 @@
                 <fields>
                     <name>Sizing_End_time</name>
                     <dataType>DateTime</dataType>
+                    <defaultValue>
+                        <elementReference>date_time_latest_WL_time</elementReference>
+                    </defaultValue>
                     <fieldText>End time</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>Sizing_Last_Timestamp_Today</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 11px;&quot;&gt;(last timestamp for today: {!date_time_latest_WL_time})&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -1988,7 +2025,7 @@
         <name>Standup_Work_Log_Review_Screen</name>
         <label>Standup Work Log Review Screen</label>
         <locationX>314</locationX>
-        <locationY>458</locationY>
+        <locationY>566</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -2114,6 +2151,11 @@
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>true</isRequired>
+                </fields>
+                <fields>
+                    <name>Standup_Last_Timestamp_Today</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 11px;&quot;&gt;(last timestamp for today: {!date_time_latest_WL_time})&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
                     <name>width</name>
