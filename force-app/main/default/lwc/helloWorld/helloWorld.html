@@ -1,0 +1,28 @@
+<!-- Build an input box and a <p> tag that updates in real time with the typed value.
+Practice using @track or reactive properties with get/set. -->
+
+<template>
+    <div class="slds-m-top_medium slds-m-bottom_x-large">
+        <p class="slds-text-heading_medium">Name formatter</p>
+        <p> This lwc is meant to take in your first and last name on two seperate input fields and format the full name in proper format. If a name is not complete, then the full name will not render.</p>
+        <div>
+            <lightning-input 
+                type="text" 
+                label="First Name" 
+                placeholder="Type here" 
+                field-level-help="This field is used in a practice exercise."
+                onchange={handleFirstNameChange}
+            ></lightning-input>
+            <lightning-input 
+                type="text" 
+                label="Last Name" 
+                placeholder="Type here" 
+                field-level-help="This field is used in a practice exercise."
+                onchange={handleLastNameChange}
+            ></lightning-input>
+        </div>
+        <div class="slds-m-vertical_medium">
+            <p>Full formatted name: {fullName}</p>
+        </div>
+    </div>
+</template>
